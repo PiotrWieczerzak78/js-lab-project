@@ -20,22 +20,15 @@ section {
     flex-direction: row;
 }
 
-nav {
-flex: 1;
-}
-
 nav, aside {
+    flex: 1;
     background-color: yellow;
     padding: 20px;
     color: red;
 }
 
-aside {
-    flex: 4;
-}
-
 article {
-    flex: 3;
+    flex: 5;
     background-color: blue;
 }
 
