@@ -10,7 +10,7 @@
 </head>
 <body>
 <header>
-    <div><h1>Refleksomierzacz</h1>
+    <div><h1>Refleksomierzacz</h1></div>
 </header>
 <div id="app">
     <h1 id="main-header">Moja aplikacja</h1>
@@ -26,7 +26,8 @@
 	<input type="checkbox" id="myCheckbox">
 	<button type="button" onclick="readValues()">Odczytaj wartości</button>
 </div>
-<script>
+<script type="text/javascript" src="js/js.js"></script>
+// <script>
 // szukanie po identyfikatorze
 //const header = document.getElementById('main-header');
 //alert(header.innerText);
@@ -45,14 +46,7 @@
 //	listItem.innerText = 'Zagrać';
 // dodaję na koniec listy
 //	document.querySelector("#app ol li:last-child").after(listItem); // jest też before
-	function removeBoringStuff(){
-		document.querySelectorAll("#app .boring").forEach((e) => e.remove());
-	}
-	function readValues(){
-		if (document.getElementById("myCheckbox").checked){
-			alert(document.getElementById("myTextField").value);
-		}
-	}
-</script>
+
+// </script>
 </body>
 </html>
