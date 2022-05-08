@@ -20,12 +20,13 @@ section {
 }
 
 
-nav {
+nav, aside {
     flex: 1;
     background-color: yellow;
     padding: 20px;
     color: red;
 }
+
 
 article {
     flex: 3;
