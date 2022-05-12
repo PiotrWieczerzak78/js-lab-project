@@ -1,11 +1,10 @@
 <!DOCTYPE html>
-<html lang="pl">
+<html lang="pl" xmlns="http://www.w3.org/1999/html">
 <head>
     <meta name="Piotr Wieczerzak" content="MJ" />
     <meta name="Refleksomierzacz" content="WWW;game;gra" />
     <meta http-equiv="Content-type" content="text/html; charset=UTF-8" />
     <title>Refleksomierzacz</title>
-    <! ––    <link rel="icon" type="image/x-icon" href="/images/favicon.ico">––>
     <link rel="stylesheet" href="mystyle.css">
 </head>
 <body>
@@ -15,26 +14,28 @@
     <section>
         <nav>
         <h1 id="main-header">Menu Gry</h1>
-            <button type="button" onclick="readValues()">Start</button>
-            <button type="button" onclick="readValues()">Stop</button>
+            <button type="button" onclick="start()" id="startButton">Start</button>
+            <button type="button" onclick="stop()" id="stopButton">Stop</button>
+            <p>Ilość Rund - wartość domyślna 5</p>
+            <input type="text" id="numberOfRound" value="5">
         </nav>
 
-        <article>
+        <article id="game-field" onclick="beFaster()">
             <h1>Pole Gry</h1>
         </article>
-        <aside>
+        <aside id="stats-panel" >
             <h1>
-                Statystyki
+                Statystyki:
             </h1>
             <ul>
-                <li class="stats">Najkrótszy czas</li>
-                <li class="stats">Najdłuższy czas</li>
-                <li class="stats">średni czas</li>
+                <li class="stats" id="minTime">Najkrótszy czas:</li>
+                <li class="stats" id="maxTime">Najdłuższy czas:</li>
+                <li class="stats" id="averageTime">średni czas:</li>
             </ul>
         </aside>
     </section>
     <footer>
-        <p>Author: Piotr Wieczerzak</p>
+        <p>Author Piotr Wieczerzak</p>
         <p><a href="mailto:pjfw78@gmail.com">pjfw78@gmail.com</a></p>
     </footer>
     <script type="text/javascript" src="js/js.js"></script>
