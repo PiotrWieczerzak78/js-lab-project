@@ -65,6 +65,15 @@ function beFaster(){
             timeoutId = setTimeout(() => changeColor(counter), getTimeOut());
         }else{
             box.innerText='Koniec Gry';
+            startButton.style.visibility = 'visible';
+            stopButton.style.display = 'none';
+            counter=0;
+            startTimestampInMilliseconds='';
+            reactTimestampInMilliseconds='';
+            timeTable = [];
+            box.style.backgroundColor = "blue";
+            colorChangeFlag=false;
+            clearTimeout(timeoutId);
         }
     }
 
