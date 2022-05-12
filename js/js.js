@@ -13,6 +13,7 @@ var retryNumber;
 var counter=0;
 timeTable = [];
 let colorChangeFlag=false;
+let timeoutId;
 
 function start(){
     box.innerText='Pole Gry';
@@ -21,13 +22,13 @@ function start(){
         retryNumber=5;
         startButton.style.visibility = 'hidden';
         stopButton.style.display = 'block';
-        setTimeout(() => changeColor(counter), getTimeOut());
+        timeoutId = setTimeout(() => changeColor(counter), getTimeOut());
         asidePanel.style.display ='none';
     }else if(!isNaN(input.value)){
         retryNumber=input.value;
         startButton.style.visibility = 'hidden';
         stopButton.style.display = 'block';
-        setTimeout(() => changeColor(counter), getTimeOut());
+        timeoutId = setTimeout(() => changeColor(counter), getTimeOut());
         asidePanel.style.display ='none';
     }else{
         alert("Ilość rund powinna być liczbą - spróbuj jeszcze raz");
@@ -43,6 +44,7 @@ function stop(){
     timeTable = [];
     box.style.backgroundColor = "blue";
     colorChangeFlag=false;
+    clearTimeout(timeoutId);
 }
 
 function beFaster(){
@@ -60,7 +62,7 @@ function beFaster(){
         counter++;
         startTimestampInMilliseconds='';
         if (counter<retryNumber){
-            setTimeout(() => changeColor(counter), getTimeOut());
+            timeoutId = setTimeout(() => changeColor(counter), getTimeOut());
         }else{
             box.innerText='Koniec Gry';
         }
